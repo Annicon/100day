@@ -59,3 +59,18 @@ else:
     F = 5 * x +3
 print('f(%.2f) = %.2f ' %(x , F))
 # 定义的为x非F，要有print，且注意print的格式
+
+
+
+# 判断输入的边长能否构成三角形，如果能则计算出三角形的周长和面积
+
+
+a = float(input(' a = '))
+b = float(input( 'b = '))
+c = float(input( 'c = '))
+if a + b > c and  a + c > b and  c + b > a:
+    z = a + b + c
+    print('对应的周长是： %f'  % ( a + b + c) )
+else:
+    print('不能构成三角形')
+ # print('对应的周长是： %f  % ( a + b + c) ')  print的引号位置错误
