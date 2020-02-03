@@ -73,3 +73,77 @@ if a + b > c and  a + c > b and  c + b > a:
 else:
     print('不能构成三角形')
  # print('对应的周长是： %f  % ( a + b + c) ')  print的引号位置错误
+
+
+
+# # 用for循环实现1~100求和
+# sum = 0
+# for x in range(101):
+#     sum += x
+# print(sum)
+#
+# # 注意：range（101）是range(101)可以产生一个0到100的整数序列。
+# # range(1, 100, 2)可以产生一个1到99的奇数序列，其中2是步长，即数值序列的增量
+
+
+# # 用for循环实现1~100之间的偶数求和
+# sum = 0
+# for x in range (2, 101, 2,):
+#     sum += x
+# print(sum)
+
+# #注意 range（2,101,2）非（0,101,2）后者表示从0到101 步长为2的数
+
+
+# 猜数字游戏
+# 计算机出一个1~100之间的随机数由人来猜
+# 计算机根据人猜的数字分别给出提示大一点/小一点/猜对了
+# import random
+# answer = random.randint(1, 100)
+# counter = 0
+# while True:
+#     counter += 1
+#     number = int(input('请输入： '))
+#     if number < answer:
+#         print('大一些')
+#     elif number  > answer:
+#         print('小一些')
+#     else:
+#         print('耶，你猜对了')
+#         break
+# print('你共猜了%d次' % counter)
+# if counter > 7:
+#     print('你智商还有很大的进步空间')
+
+#   number = input('请输入： ')  错误 应该在input前 加int
+# 报错原因是：input()输入的内容是一个字符串，字符串跟整型数值answer进行比较，类型不匹配
+# 要构造不知道具体循环次数的循环结构，我们推荐使用while循环。while循环通过一个能够产生
+ # 或转换出bool值的表达式来控制循环，表达式的值为True循环继续，表达式的值为False循环结束。
+
+
+
+# # 输出乘法口诀表(九九表)
+#
+# for i in range(1, 10):
+#     for j in range(1, i + 1):
+#         print('%d*%d=%d' % (i, j, i*j), end='\t')
+#     print()
+
+
+# 输入一个正整数判断它是不是素数
+# 提示：素数指的是只能被1和自身整除的大于1的整数。
+from math import  sqrt
+num = int(input('请输入一个正整数： '))
+end = int(sqrt(num))
+is_prime = True
+for x in range(2, end + 1):
+    if num % x == 0:
+        is_prime = False
+        break
+if is_prime and num != 1:
+    print('%d是素数' % num)
+else:
+    print('%d不是素数' % num)
+
+# 注意：for x in range(0, end + 1):  没有做非空校验
+# 报错： ZeroDivisionError: integer division or modulo by zero
